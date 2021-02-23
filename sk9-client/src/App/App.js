@@ -11,12 +11,44 @@ import SessionDetail from "../SessionDetail/SessionDetail"
 
 
 class App extends Component {
-  state = {
+  constructor(props) {
+    super(props);
+    this.state = {
     sessions: [],
     folders: [],
+  }
+};
+
+  handleAddFolder = (folder) => {
+    this.setState({
+      folders: [...this.state.folders, folder],
+    });
   };
 
+  handleAddSession = (session) => {
+    this.setState({
+      sessions: [...this.state.sessions, session],
+    });
+  };
 
+  handleDeleteSession = (sessiond) => {
+    this.setState({
+      sessions: this.state.session.filter((session) => session.id !== sessionId),
+    });
+  };
+
+  /*renderNavRoutes() {
+    return (
+      <>
+        {["/", "/folder/:folderId"].map((path) => (
+          <Route exact key={path} path={path} component={NoteListNav} />
+        ))}
+        <Route path="/session/:sessionId" component={NotePageNav} />
+        <Route path="/add-folder" component={NotePageNav} />
+        <Route path="/add-session" component={NotePageNav} />
+      </>
+    );
+  }*/
 
   renderMainRoutes() {
     return (
