@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export class AddSession extends Component {
+export class EditSession extends Component {
     render() {
         return (
             <div>
-            <header>
+               <header>
               <h1>New Session Details</h1>
             </header>
               <form id="new-session">
@@ -54,9 +54,9 @@ export class AddSession extends Component {
                   <button type="reset">Reset</button>
                 </section>
               </form>
-          </div>
+            </div>
         )
     }
 }
 
-export default AddSession
+export default EditSession
